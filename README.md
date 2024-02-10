@@ -44,3 +44,21 @@ Y probamos los tests utilizando
 ```shell
 mvn test
 ```
+
+## Ejercicio Registraduría
+
+### Diferencia entre mvn package y mvn test
+
+Maven funciona en "Lifecycles". Un ciclo lineal dónde cada etapa se ejecuta una depués de la otra.
+
+Un lifecycle ejecutará cada etapa previa a la suya propia. Por ejemplo si tenemos
+
+
+etapa 1 -> etapa 2 -> etapa 3
+
+Entonces ejecutar la etapa 3 causará la ejecución de las etapas 1 y 2 en ese orden.
+
+
+- mvn test: Se ejecuta antes de package. Avanza lo suficiente en el lifecycle para ejecutar las pruebas unitarias.
+- mvn package: Se ejecuta después de test. Por eso, también ejecuta mvn test.
+
